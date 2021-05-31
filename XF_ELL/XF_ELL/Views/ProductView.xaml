@@ -1,0 +1,83 @@
+﻿<views:MvxContentPage
+             x:TypeArguments="vm:ProductViewModel"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+	         xmlns:vm="clr-namespace:XF_ELL.ViewModels;assembly=XF_ELL"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XF_ELL.Views.ProductView"
+             NavigationPage.HasNavigationBar="False">
+    <views:MvxListView
+                Grid.Row="1"
+                HasUnevenRows="True"
+                SeparatorVisibility="None"
+                VerticalScrollBarVisibility="Never"
+                HorizontalScrollBarVisibility="Never"
+                SelectionMode="None"
+                mvx:Bi.nd="ItemsSource Path=Products; ItemClick Path=SelectCommand">
+        <views:MvxListView.Header>
+            <Label
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"                   
+                    FontSize="25"
+                    Text="Products"
+                    Padding="0,15,0,25">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding HasItems}" Value="False">
+                        <Setter Property="IsVisible" Value="False"></Setter>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+        </views:MvxListView.Header>
+        <views:MvxListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                                HeightRequest="120"
+                                Padding="0"
+                                RowSpacing="0"
+                                ColumnSpacing="0"
+                                >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image
+                                    
+                                    Grid.Column="0"
+                                    HorizontalOptions="Center"
+                                    mvx:Bi.nd="Source Path=ProductImageSource"
+                                    >
+                        </Image>
+                        <Label
+                                    Grid.Column="1"
+                                    FontSize="24"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    mvx:Bi.nd="Text Name">
+                        </Label>
+                        <Label
+                                    Grid.Column="2"
+                                    FontSize="20"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start"
+                                    Text="Expiration date:">
+                        </Label>
+                        <Label
+                                    Grid.Column="2"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    mvx:Bi.nd="Text ExpirationDate">
+                        </Label>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </views:MvxListView.ItemTemplate>
+
+    </views:MvxListView>
+    
+</views:MvxContentPage>

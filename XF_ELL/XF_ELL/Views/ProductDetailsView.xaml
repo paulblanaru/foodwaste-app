@@ -1,0 +1,102 @@
+﻿<views:MvxContentPage
+	x:TypeArguments="vm:ProductDetailsViewModel"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+	xmlns:vm="clr-namespace:XF_ELL.ViewModels;assembly=XF_ELL"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resource="clr-namespace:XF_ELL.Resources"
+    xmlns:controls="clr-namespace:XF_ELL.Controls"
+    xmlns:renderers="clr-namespace:XF_ELL.Renderers"
+    x:Class="XF_ELL.Views.ProductDetailsView"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <controls:CustomHeader
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"                
+                mvx:Bi.nd="BackCommand Path=BackCommand;TitleText Path=Name">
+            </controls:CustomHeader>
+            <Image
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                mvx:Bi.nd="Source Path=ProductImageSource"
+                HeightRequest="130"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"/>
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="40"
+                VerticalOptions="End"
+                Text="{resource:Translate UpdatePhotoLabel}"
+                FontSize="Title"
+                HorizontalOptions="Center"/>
+            <Entry
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+			    HeightRequest="40"
+                Margin="60,0,60,15"
+                IsReadOnly="True"
+			    VerticalOptions="Center"
+			    Placeholder="{resource:Translate Name}"                  
+			    mvx:Bi.nd="Text Path = Name"/>
+            <Entry
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+				HeightRequest="40"
+                Margin="60,0,60,15"
+                IsReadOnly="True"
+				VerticalOptions="Center"
+				Placeholder="{resource:Translate Quantity}"                   
+				mvx:Bi.nd="Text Path=Quantity"/>
+            <DatePicker
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+				HeightRequest="40"
+				VerticalOptions="Center"
+                Margin="60,0,60,15"
+                IsTabStop="True"
+				mvx:Bi.nd="Date PostedDate"/>
+            <DatePicker
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+				HeightRequest="40"
+                Margin="60,0,60,15"
+                IsTabStop="True"
+				VerticalOptions="Center"
+				mvx:Bi.nd="Date ExpirationDate"/>
+            <Button
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+				HorizontalOptions="Center"
+                VerticalOptions="Center"
+				TextColor="White"
+                Margin="60,0,60,15"
+				BackgroundColor="DeepSkyBlue"
+                mvx:Bi.nd="Command Path=MapCommand"
+				Text="{resource:Translate MapButton}"/>
+        </Grid>
+    </ContentPage.Content>
+</views:MvxContentPage>

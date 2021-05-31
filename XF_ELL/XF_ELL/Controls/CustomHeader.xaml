@@ -1,0 +1,41 @@
+﻿<views:MvxContentView
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="XF_ELL.Controls.CustomHeader"
+                xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                x:Name="customHeader"             
+                >
+    <Grid          
+        HeightRequest = "60"
+        BackgroundColor="LightGreen"
+        BindingContext="{x:Reference customHeader}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ImageButton
+            Grid.Column="0"
+            Source="back"
+            Padding="10,10,50,10"
+            BackgroundColor="LightGreen"
+            mvx:Bi.nd="Command Path=BackCommand"
+            />
+        <Label          
+            FontSize="20"
+            Grid.Column="1"
+            VerticalOptions= "CenterAndExpand"
+            HorizontalOptions= "CenterAndExpand"
+            TextColor="Black"
+            mvx:Bi.nd= "Text Path=TitleText"/>
+        <ImageButton
+            Grid.Column="2"
+            Source="add"
+            Padding="50,10,10,10"
+            BackgroundColor="LightGreen"
+            mvx:Bi.nd="Command Path=AddCommand;IsVisible Path=IsAddVisible"
+            />
+    </Grid>
+
+</views:MvxContentView>

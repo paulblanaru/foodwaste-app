@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XamlProjectMeta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Files>
+    <XamlFileMeta>
+      <FilePath>D:\Info\source\repos\XF_ELL\XF_ELL\XF_ELL\App.xaml</FilePath>
+      <Hash>42-60-D1-52-49-02-B0-01-9A-42-63-AD-B0-84-AB-B5</Hash>
+      <Properties />
+    </XamlFileMeta>
+    <XamlFileMeta>
+      <FilePath>D:\Info\source\repos\XF_ELL\XF_ELL\XF_ELL\Views\MainPageView.xaml</FilePath>
+      <Hash>45-07-E9-B6-D5-AE-D4-5F-C1-AF-18-FB-CE-BF-D0-A0</Hash>
+      <Properties />
+    </XamlFileMeta>
+    <XamlFileMeta>
+      <FilePath>D:\Info\source\repos\XF_ELL\XF_ELL\XF_ELL\Views\ProductView.xaml</FilePath>
+      <Hash>39-E8-AA-70-9E-5A-5E-60-78-B1-96-39-A5-0B-3F-10</Hash>
+      <Properties />
+    </XamlFileMeta>
+  </Files>
+</XamlProjectMeta>

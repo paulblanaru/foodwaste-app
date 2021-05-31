@@ -1,0 +1,91 @@
+﻿<views:MvxContentPage 
+	x:TypeArguments="vm:LoginViewModel" 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:vm="clr-namespace:XF_ELL.ViewModels;assembly=XF_ELL"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:resource="clr-namespace:XF_ELL.Resources"
+    xmlns:renderers="clr-namespace:XF_ELL.Renderers"
+    x:Class="XF_ELL.Views.LoginView"
+	BackgroundColor="White"
+	NavigationPage.HasNavigationBar="False">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+            <Image
+				Grid.Row="0"
+				VerticalOptions="End"
+                Margin="0,50,0,0"
+				HorizontalOptions="Center"
+                Source= "flogo"             
+				/>
+            <StackLayout
+				Grid.Row="1"
+				Margin="80,0,80,0"
+				Orientation="Vertical"
+				VerticalOptions="End"               
+                >
+                <renderers:CustomEntry 
+					HeightRequest="40"
+					VerticalOptions="CenterAndExpand"
+					BackgroundColor="White"
+                    Margin="0,0,0,15"
+					Placeholder="{resource:Translate Username}"                  
+				    mvx:Bi.nd="Text Path=Username"/>
+                <renderers:CustomEntry
+					HeightRequest="40"
+					VerticalOptions="CenterAndExpand"
+					BackgroundColor="White"
+                    Margin="0,0,0,15"
+					Placeholder="{resource:Translate Password}"
+                    IsPassword="True"
+				    mvx:Bi.nd="Text Path=Password"/>
+                <Label
+					HeightRequest="30"
+					VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+					TextColor="Red"
+				    mvx:Bi.nd="Text Path=Error"/>
+			</StackLayout>
+
+            <StackLayout
+                Grid.Row="2"
+                Orientation="Vertical"
+				VerticalOptions="Center">
+                <Button
+				HorizontalOptions="CenterAndExpand" 
+				TextColor="White"
+				BackgroundColor="DeepSkyBlue"
+				Text="{resource:Translate Login}"
+				mvx:Bi.nd="Command Path=LoginCommand"/>
+                <Button
+				Grid.Row="2"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				TextColor="Black"
+				BackgroundColor="White"
+				Text="{resource:Translate ForgotPassword}"
+				WidthRequest="250"
+				HeightRequest="50"
+				mvx:Bi.nd="Command Path=ForgotCommand"/>
+            </StackLayout>
+            <Button
+                Grid.Row="3"
+   				VerticalOptions="End"
+				HorizontalOptions="Center"
+				TextColor="Black"
+				BackgroundColor="White"
+				Text="{resource:Translate NoAccount}"
+				WidthRequest="350"
+				HeightRequest="50"
+				mvx:Bi.nd="Command Path=NoAccountCommand"/>
+            </Grid>
+	</ContentPage.Content>
+</views:MvxContentPage>
